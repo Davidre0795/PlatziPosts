@@ -1,6 +1,6 @@
 $(() => {    
 
-    //$("#authFB").click(() => );
+    const objAuth = new Autenticacion()    
 
     $("#btnRegistroEmail").click(() => {
         const nombres = $('#nombreContactoReg').val();
@@ -17,13 +17,15 @@ $(() => {
         auth.autEmailPass(email, password)
     });
 
-    //$("#authGoogle").click(() => //AUTH con GOOGLE);
+    $("#authGoogle").click(() => objAuth.authCuentaGoogle());
 
-    //$("#authTwitter").click(() => //AUTH con Twitter);
+    $("#authFB").click(() => objAuth.authCuentaFacebook() );
+
+    //$("#authTwitter").click(() => objAuth.authCuentaFacebook());
 
     $('#btnRegistrarse').click(() => {
         $('#modalSesion').modal('close');
-        $('#modalRegistro').modal('open');
+        $('#modalRegistro').modal('open');        
     });
 
     $('#btnIniciarSesion').click(() => {
